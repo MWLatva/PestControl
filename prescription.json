@@ -1,0 +1,340 @@
+{
+    "Prescriptions":[
+        {
+            "name":"Ibuprofen",
+            "locations":[
+                {
+                    "providerid":1,
+                    "price": 10.0
+                },
+                {
+                    "providerid":2,
+                    "price": 6.85
+                },
+                {
+                    "providerid":3,
+                    "price": 9.50
+                },
+                {
+                    "providerid":4,
+                    "price": 11.0
+                },
+                {
+                    "providerid":5,
+                    "price": 8.20
+                },
+                {
+                    "providerid":6,
+                    "price": 10.0
+                },
+                {
+                    "providerid":7,
+                    "price": 9.35
+                },
+                {
+                    "providerid":8,
+                    "price": 7.0
+                }
+            ]
+        },
+        {
+            "name": "Amoxicillin",
+            "locations":[
+                {
+                    "providerid":1,
+                    "price": 20.0
+                },
+                {
+                    "providerid":2,
+                    "price": 23.0
+                },
+                {
+                    "providerid":3,
+                    "price": 17.5
+                },
+                {
+                    "providerid":8,
+                    "price": 22.25
+                },
+                {
+                    "providerid":5,
+                    "price": 21.8
+                },
+                {
+                    "providerid":6,
+                    "price": 24.1
+                }
+            ]
+        },
+        {
+            "name": "Baclofen",
+            "locations":[
+                {
+                    "providerid":1,
+                    "price": 25.0
+                },
+                {
+                    "providerid":2,
+                    "price": 16.0
+                },
+                {
+                    "providerid":3,
+                    "price": 22.1
+                }
+            ]
+        },
+        {
+            "name": "Allopurinol",
+            "locations":[
+                {
+                    "providerid":1,
+                    "price": 27.0
+                },
+                {
+                    "providerid":8,
+                    "price": 30.0
+                },
+                {
+                    "providerid":2,
+                    "price": 22.5
+                }
+            ]
+        },
+        {
+            "name": "Cephalexin",
+            "locations":[
+                {
+                    "providerid":8,
+                    "price": 50.0
+                },
+                {
+                    "providerid":6,
+                    "price": 42.0
+                },
+                {
+                    "providerid":2,
+                    "price": 36.9
+                },
+                {
+                    "providerid":3,
+                    "price": 40.15
+                },
+                {
+                    "providerid":7,
+                    "price": 46.5
+                },
+                {
+                    "providerid":1,
+                    "price": 49.0
+                },
+                {
+                    "providerid":5,
+                    "price": 34.0
+                }
+            ]
+        },
+        {
+            "name": "Penicillin",
+            "locations":[
+                {
+                    "providerid":8,
+                    "price": 6.5
+                },
+                {
+                    "providerid":7,
+                    "price": 6.85
+                },
+                {
+                    "providerid":2,
+                    "price": 5.8
+                },
+                {
+                    "providerid":1,
+                    "price": 7.15
+                },
+                {
+                    "providerid":3,
+                    "price": 9.20
+                },
+                {
+                    "providerid":5,
+                    "price": 8.60
+                }
+            ]
+        },
+        {
+            "name": "Ciprofloxacin",
+            "locations":[
+                {
+                    "providerid":8,
+                    "price": 85.0
+                },
+                {
+                    "providerid":6,
+                    "price": 82.5
+                },
+                {
+                    "providerid":3,
+                    "price": 76.6
+                }
+            ]
+        },
+        {
+            "name": "Albuterol 2mg",
+            "locations":[
+                {
+                    "providerid":1,
+                    "price": 30.0
+                },
+                {
+                    "providerid":2,
+                    "price": 27.85
+                },
+                {
+                    "providerid":3,
+                    "price": 31.2
+                }
+            ]
+        },
+        {
+            "name": "Albuterol 6mg",
+            "locations":[
+                {
+                    "providerid":8,
+                    "price": 38.0
+                },
+                {
+                    "providerid":6,
+                    "price": 42.5
+                },
+                {
+                    "providerid":4,
+                    "price": 50.0
+                }
+            ]
+        },
+        {
+            "name": "Lisinopril 10mg",
+            "locations": [
+                {
+                    "providerid": 5,
+                    "price": 25.0
+                },
+                {
+                    "providerid": 2,
+                    "price": 34.5
+                },
+                {
+                    "providerid": 3,
+                    "price": 31.2
+                }
+            ]
+        },
+        {
+            "name": "Simvastatin",
+            "locations": [
+                {
+                    "providerid": 4,
+                    "price": 30.0
+                },
+                {
+                    "providerid": 8,
+                    "price": 32.6
+                },
+                {
+                    "providerid": 7,
+                    "price": 34.8
+                }
+            ]
+        },
+        {
+            "name": "Levothyroxine",
+            "locations": [
+                {
+                    "providerid": 1,
+                    "price": 45.3
+                },
+                {
+                    "providerid": 2,
+                    "price": 36.4
+                },
+                {
+                    "providerid": 4,
+                    "price": 48.5
+                }
+            ]
+        },
+        {
+            "name": "Doxycycline",
+            "locations": [
+                {
+                    "providerid": 1,
+                    "price": 3.50
+                },
+                {
+                    "providerid": 2,
+                    "price": 0.0
+                },
+                {
+                    "providerid": 4,
+                    "price": 7.5
+                },
+                {
+                    "providerid": 7,
+                    "price": 6.0
+                }
+            ]
+        },
+        {
+            "name": "Omeprazole 20mg",
+            "locations": [
+                {
+                    "providerid": 3,
+                    "price": 15.5
+                },
+                {
+                    "providerid": 6,
+                    "price": 20.0
+                },
+                {
+                    "providerid": 1,
+                    "price": 22.5
+                }
+            ]
+        },
+        {
+            "name": "Atorvastatin",
+            "locations": [
+                {
+                    "providerid": 8,
+                    "price": 28.0
+                },
+                {
+                    "providerid": 1,
+                    "price": 16.0
+                },
+                {
+                    "providerid": 7,
+                    "price": 22.5
+                }
+            ]
+        },
+        {
+            "name": "Cetirizine",
+            "locations": [
+                {
+                    "providerid": 1,
+                    "price": 80.2
+                },
+                {
+                    "providerid": 8,
+                    "price": 75.5
+                },
+                {
+                    "providerid": 4,
+                    "price": 73.3
+                }
+            ]
+        }
+    ]
+}
