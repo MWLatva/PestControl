@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { RxSelectComponent } from './components/rx-select/rx-select.component';
-//import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomepageComponent, RxSelectComponent],
