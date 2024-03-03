@@ -30,7 +30,7 @@
   } */
   
   /*
-   * Property styles in unhighlighted state.
+   * prescription styles in unhighlighted state.
    */
   .prescription {
     align-items: center;
@@ -162,45 +162,45 @@
   /*
    * pills icon colors.
    */
-  .property.highlight:has(.fa-pills) .icon {
+  .prescription.highlight:has(.fa-pills) .icon {
     color: var(--rx-color);
   }
   
-  .property:not(.highlight):has(.fa-pills) {
+  .prescription:not(.highlight):has(.fa-pills) {
     background-color: var(--rx-color);
   }
   
-  .property:not(.highlight):has(.fa-pills)::after {
+  .prescription:not(.highlight):has(.fa-pills)::after {
     border-top: 9px solid var(--rx-color);
   }
   
   /*
    * Warehouse icon colors.
    */
-  .property.highlight:has(.fa-warehouse) .icon {
+  .prescription.highlight:has(.fa-warehouse) .icon {
     color: var(--warehouse-color);
   }
   
-  .property:not(.highlight):has(.fa-warehouse) {
+  .prescription:not(.highlight):has(.fa-warehouse) {
     background-color: var(--warehouse-color);
   }
   
-  .property:not(.highlight):has(.fa-warehouse)::after {
+  .prescription:not(.highlight):has(.fa-warehouse)::after {
     border-top: 9px solid var(--warehouse-color);
   }
   
   /*
    * Shop icon colors.
    */
-  .property.highlight:has(.fa-shop) .icon {
+  .prescription.highlight:has(.fa-shop) .icon {
     color: var(--shop-color);
   }
   
-  .property:not(.highlight):has(.fa-shop) {
+  .prescription:not(.highlight):has(.fa-shop) {
     background-color: var(--shop-color);
   }
   
-  .property:not(.highlight):has(.fa-shop)::after {
+  .prescription:not(.highlight):has(.fa-shop)::after {
     border-top: 9px solid var(--shop-color);
   }
   
