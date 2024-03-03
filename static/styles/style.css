@@ -64,39 +64,39 @@
     z-index: 1;
   }
   
-  .property .icon {
+  .prescription .icon {
     align-items: center;
     display: flex;
     justify-content: center;
     color: #FFFFFF;
   }
   
-  .property .icon svg {
+  .prescription .icon svg {
     height: 20px;
     width: auto;
   }
   
-  .property .details {
+  .prescription .details {
     display: none;
     flex-direction: column;
     flex: 1;
   }
   
-  .property .address {
+  .prescription .address {
     color: #9E9E9E;
     font-size: 10px;
     margin-bottom: 10px;
     margin-top: 5px;
   }
   
-  .property .features {
+  .prescription .features {
     align-items: flex-end;
     display: flex;
     flex-direction: row;
     gap: 10px;
   }
   
-  .property .features > div {
+  .prescription .features > div {
     align-items: center;
     background: #F5F5F5;
     border-radius: 5px;
@@ -108,9 +108,9 @@
   }
   
   /*
-   * Property styles in highlighted state.
+   * prescription styles in highlighted state.
    */
-  .property.highlight {
+  .prescription.highlight {
     background-color: #FFFFFF;
     border-radius: 8px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
@@ -119,43 +119,43 @@
     width: auto;
   }
   
-  .property.highlight::after {
+  .prescription.highlight::after {
     border-top: 9px solid #FFFFFF;
   }
   
-  .property.highlight .details {
+  .prescription.highlight .details {
     display: flex;
   }
   
-  .property.highlight .icon svg {
+  .prescription.highlight .icon svg {
     width: 50px;
     height: 50px;
   }
   
-  .property .bed {
+  .prescription .bed {
     color: #FFA000;
   }
   
-  .property .bath {
+  .prescription .bath {
     color: #03A9F4;
   }
   
-  .property .size {
+  .prescription .size {
     color: #388E3C;
   }
   
   /*
    * House icon colors.
    */
-  .property.highlight:has(.fa-house) .icon {
+  .prescription.highlight:has(.fa-house) .icon {
     color: var(--house-color);
   }
   
-  .property:not(.highlight):has(.fa-house) {
+  .prescription:not(.highlight):has(.fa-house) {
     background-color: var(--house-color);
   }
   
-  .property:not(.highlight):has(.fa-house)::after {
+  .prescription:not(.highlight):has(.fa-house)::after {
     border-top: 9px solid var(--house-color);
   }
   
