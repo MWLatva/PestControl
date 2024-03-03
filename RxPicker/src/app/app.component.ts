@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Pipe, PipeTransform} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonModule } from 'primeng/button';
@@ -8,6 +8,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
+import { FormsModule } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -21,7 +23,9 @@ import { ToastModule } from 'primeng/toast';
     MenuModule, 
     MenubarModule, 
     GoogleMapsModule,
-    DropdownModule
+    DropdownModule,
+    ToastModule,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
@@ -29,4 +33,12 @@ import { ToastModule } from 'primeng/toast';
 })
 export class AppComponent {
   title = 'RxPicker';
+}
+
+@Pipe({ name: 'safe' })
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) {}
+  transform(url:string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 }

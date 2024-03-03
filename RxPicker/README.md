@@ -1,6 +1,12 @@
-# RxPicker
+# Rx-4Less
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+## Problem & Solution
+This project was a part of the 2024 LehighHacks Hack for Health Hackathon, sponsored by Google Cloud & Lehigh University. Our solution, Rx-4Less, aims to address the critical issue of accessing affordable prescriptions, a challenge that lacks widespread commercial solutions. It provides a streamlined platform for users to find and compare prescription prices easily. This innovative approach fills a significant gap in healthcare, offering the most cost-saving options for medications.
+
+## Social Impact
+Rx-4-Less aims to significantly improve healthcare affordability by enabling users to easily find cost-saving prescription options, addressing a crucial gap in the current healthcare system. With further development, it has the potential to broaden its impact, making the cheapest medications accessible to a larger population and contributing positively to global health outcomes.
+
+
 
 ## Development server
 

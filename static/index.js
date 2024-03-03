@@ -4,20 +4,25 @@ let map;
 // Helpful Guide for custom AdvancedMarkers: https://developers.google.com/maps/documentation/javascript/examples/advanced-markers-html
 async function initMap() {
 
+  
+  const name = CHOICECHOICE;
+  const rxName = name; // Default to 'Ibuprofen' if no parameter is found
   const position = { lat: 40.6012728, lng: -75.3598203 };
   //center ^^
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   // This route will be replaced by the client's request of specific prescription and radius
-  const response = await fetch("/search_prescription/Ibuprofen?sort=price&radius=25");
-  const prescriptions = await response.json();
-  console.log(prescriptions);
   map = new Map(document.getElementById("map"), {
     zoom: 12,
     center: position,
     mapId: "DEMO_MAP_ID",
   });
+  if(name == "none")
+    return;
+  const response = await fetch(`http://127.0.0.1:5000/search_prescription/${rxName}?sort=price&radius=25`);
+  const prescriptions = await response.json();
+  console.log(prescriptions);
   var rank = 0;
   const totalPrescriptions = prescriptions.length;
   for (const prescription of prescriptions) {

@@ -89,11 +89,9 @@
 
     
 
-    <form id="taskForm">
-        <div><button type="RxList"><a href="/homepage">RxList</a></button>
-        <button type="RxMap"><a href="/index">RxMap</a></button></div>
+    <form id="taskForm" onsubmit="addRxToMap(event)">
         <label for="taskInput">Add Rx:</label>
-        <input type="text" id="taskInput" required>
+        <input type="text" id="taskInput" name="rxName" required>
         <button type="submit">Add</button>
     </form>
 
@@ -175,6 +173,16 @@
                 a[i].style.display = "none";
                 }
             }
+        }
+    </script>
+    <script>
+        function addRxToMap(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const rxName = document.getElementById('taskInput').value; // Get the Rx name from the input field
+        
+            // Assuming you're now navigating to the map page which can handle the RxName
+            // This can be done via query parameters, local storage, or sessions
+            window.location.href = `/index?rxName=${encodeURIComponent(rxName)}`;
         }
     </script>
 </body>

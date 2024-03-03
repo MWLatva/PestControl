@@ -1,4 +1,21 @@
 .rxHeader{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+#logo{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    left: 63.5%;
+    top: 2.8%;
+    transform: rotate(30deg); /* Tilt the anchor tag by 30 degrees to the right */
+}
+#innerLogo{
+    height: 30px;
+    width: 35px;
+    position: absolute;
+    left: 65%;
+    top: 7.0%;
+    transform: rotate(30deg); /* Tilt the anchor tag by 30 degrees to the right */
 }

@@ -6,7 +6,7 @@ import { NavigationMenuComponent } from '../navigation-menu/navigation-menu.comp
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ MenubarModule, NavigationMenuComponent],
+  imports: [ MenuModule, MenubarModule, NavigationMenuComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

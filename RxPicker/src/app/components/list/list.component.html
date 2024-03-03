@@ -1,0 +1,22 @@
+<p-table [value]="(prescriptions$ | async) ?? []">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>RX</th>
+            <th>Price</th>
+            <th>Location</th>
+            <th>delete</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-prescription>
+        <tr> 
+            <td>{{ prescription.name }}</td>
+            <td>${{ prescription.location.price.toFixed(2)}}</td>
+            <td>{{ prescription.location.store_name}}</td>
+            <td>
+                <p-button label="delete" icon="pi pi-times" iconPos="right" (onClick)="removePrescription(prescription.name)"></p-button>
+            </td>
+        </tr> 
+    </ng-template>
+</p-table>
+<!-- switch out prduct details for [items] / prescription information -->
+

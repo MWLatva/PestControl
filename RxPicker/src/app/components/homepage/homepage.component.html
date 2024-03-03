@@ -1,24 +1,11 @@
-<!--<p>homepage works!</p>
-{{variable}}-->
 
 <div style="padding: 10px;">
-    <p-button label="Add" icon="pi pi-plus" iconPos="left" onclick=""></p-button>
-    <p-dropdown [options]="drug_names" placeholder="Enter RX Here" [editable]="true" optionLabel="name"></p-dropdown>
+    <p-button label="Select RX" icon="pi pi-plus" iconPos="left" (onClick)="addPrescription()"></p-button>
+    <p-dropdown [options]="drop_down_options" [(ngModel)]="selected_drug" (onChange)="drugChange($event)" placeholder="Enter RX Here" [filter]="true" filterBy="name" optionLabel="name"></p-dropdown>
+    <p-dropdown  appendTo="body" [options]="location_options" [(ngModel)]="selected_location" placeholder="Choose Your Location!" [filter]="true" filterBy="store_name"  optionLabel="store_name"></p-dropdown>
+    <!-- <p-button label="" icon="pi pi-check" iconPos="left" (onClick)=""></p-button> -->
 </div>
 
 <div>
-    <p-table [value]="drug_names">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>RX</th>
-                <th>Price</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-drug>
-            <tr>
-                <td>{{ drug.name }}</td>
-                <td>{{ drug.price }}</td>
-            </tr>
-        </ng-template>
-    </p-table>
+    <app-map></app-map>
 </div>

@@ -7,6 +7,9 @@ from flask_swagger import swagger as Swagger
 from flask_swagger_ui import get_swaggerui_blueprint
 from geopy.distance import geodesic
 import googlemaps
+from flask_cors import CORS
+
+
 
 parser = reqparse.RequestParser()
 parser.add_argument('lat', type=float, help='Latitude of the location')
@@ -19,6 +22,7 @@ parser.add_argument('filter', type=str, help='Filter by distance or price')
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app, resources={r'/*': {'origins': '*'}})
 
 # Load JSON data from a separate file
 with open('store.json', 'r') as file:
@@ -112,6 +116,28 @@ class Address(Resource):
         reverse_geocode_result = gmaps.reverse_geocode((lat, lng))
 
         return jsonify(reverse_geocode_result[1]["formatted_address"])
+@api.route('/map/<prescription>')
+class Mapp(Resource):
+    def get(self, prescription):
+        with(open('templates/index.html', 'r')) as file:
+            fileString = file.read()
+            fileString = fileString.replace('CHOICECHOICE', prescription)
+            return fileString
+        
+@api.route('/script/<prescription>')
+class Script(Resource):
+    def get(self, prescription):
+        with(open('static/index.js', 'r')) as file:
+                headers = {'Content-Type': 'text/javascript'}
+                fileString = file.read().replace('CHOICECHOICE', "\'"+prescription+"\'")
+                return make_response(fileString, 200, headers)
+
+@api.route('/style')
+class Style(Resource):
+    def get(self):
+        with(open('static/styles/style.css', 'r')) as file:
+                headers = {'Content-Type': 'text/css'}
+                return make_response(file.read(), 200, headers)
 
 #Geocoding API 
 #python client

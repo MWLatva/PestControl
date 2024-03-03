@@ -8,10 +8,10 @@ import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-navigation-menu',
   standalone: true,
-  imports: [MenuModule, ToastModule, ButtonModule],
+  imports: [MenuModule, ButtonModule],
   templateUrl: './navigation-menu.component.html',
   styleUrl: './navigation-menu.component.css',
-  providers:[MessageService]
+  providers:[]
 })
 export class NavigationMenuComponent {
 
