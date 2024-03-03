@@ -10,7 +10,7 @@ import { RxSelectComponent } from './components/rx-select/rx-select.component';
   declarations: [AppComponent, HomepageComponent, RxSelectComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [
-    //provideHttpClient(),
+    provideHttpClient(),
   ],
   bootstrap: [AppComponent],
 })
