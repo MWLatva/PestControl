@@ -1,0 +1,25 @@
+<google-map 
+  height="400px"
+  width="100%"
+  [center]="center"
+  [zoom]="zoom"
+  [options]="mapOptions">
+  <map-marker 
+    *ngFor="let prescription of prescriptions"
+    [position]="{ lat: prescription.lat, lng: prescription.lng }"
+    [title]="prescription.name"
+    #marker="mapMarker" <!-- Add this line -->
+    (mapClick)="openInfo(marker, prescription.name + ' - $' + prescription.price)"
+    [options]="{
+      icon: { 
+        path: google.maps.SymbolPath.CIRCLE, 
+        scale: 8, 
+        fillColor: prescription.color, 
+        fillOpacity: 1, 
+        strokeWeight: 2, 
+        strokeColor: 'white' 
+      }
+    }">
+  </map-marker>
+  <map-info-window>{{ infoContent }}</map-info-window>
+</google-map>

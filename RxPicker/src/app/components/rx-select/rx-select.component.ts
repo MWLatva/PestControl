@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-rx-select',
+  standalone: true,
+  imports: [],
   templateUrl: './rx-select.component.html',
-  styleUrls: ['./rx-select.component.css']
+  styleUrl: './rx-select.component.css'
 })
-export class RxSelectComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class RxSelectComponent {
 
 }

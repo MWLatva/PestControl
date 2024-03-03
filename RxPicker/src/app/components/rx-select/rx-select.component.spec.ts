@@ -8,12 +8,10 @@ describe('RxSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RxSelectComponent ]
+      imports: [RxSelectComponent]
     })
     .compileComponents();
-  });
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(RxSelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
