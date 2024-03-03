@@ -74,6 +74,7 @@ class SearchPrescription(Resource):
         lat = args['lat']
         lng = args['lng']
         radius = args['radius']
+        sort = args['sort']
         
         if(lat is None or lng is None):
             # return preset lat or long
@@ -99,7 +100,8 @@ class SearchPrescription(Resource):
                         "name": prescription,
                         "address": Address.get(Address, store["lat"], store["lng"]).json
                     })
-
+        if sort == 'price':
+            results = sorted(results, key=lambda x: x["price"])
         return jsonify(results)
 
 @api.route('/address/<lat>/<lng>')

@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "RxPicker:build:production"
+              "browserTarget": "RxPicker:build:production"
             },
             "development": {
-              "buildTarget": "RxPicker:build:development"
+              "browserTarget": "RxPicker:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "RxPicker:build"
+            "browserTarget": "RxPicker:build"
           }
         },
         "test": {
@@ -101,5 +101,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "RxPicker"
 }

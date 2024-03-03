@@ -1,7 +1,7 @@
 
 // Initialize and add the map
 let map;
-
+// Helpful Guide for custom AdvancedMarkers: https://developers.google.com/maps/documentation/javascript/examples/advanced-markers-html
 async function initMap() {
 
   const position = { lat: 40.6012728, lng: -75.3598203 };
@@ -9,17 +9,21 @@ async function initMap() {
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-  const response = await fetch("/search_prescription/Ibuprofen?sort=price");
+  // This route will be replaced by the client's request of specific prescription and radius
+  const response = await fetch("/search_prescription/Ibuprofen?sort=price&radius=25");
   const prescriptions = await response.json();
   console.log(prescriptions);
-  // The map, centered at Uluru
-  //What does Zoom mean here?
   map = new Map(document.getElementById("map"), {
     zoom: 12,
     center: position,
     mapId: "DEMO_MAP_ID",
   });
+  var rank = 0;
   for (const prescription of prescriptions) {
+    // Append rank to prescription then increment rank
+    prescription.rank = rank + 1;
+    rank = rank + 1;
+    console.log(prescription);
     const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
       map,
       content: buildContent(prescription),
@@ -53,18 +57,18 @@ function buildContent(prescription) {
         <span class="fa-sr-only">Rx</span>
     </div>
     <div class="details">
-        <div class="provider">${prescription.store_name} / month</div>
+        <div class="provider">${prescription.rank}. ${prescription.store_name}</div>
         <div class="address">${prescription.address}</div>
         <div class="features">
         <div>
             <i aria-hidden="true" class="fa fa-dollar-sign fa-lg" title="Price"></i>
             <span class="fa-sr-only">Price</span>
-            <span>$${prescription.price}</span>
+            <span>$${prescription.price.toFixed(2)} / mo</span>
         </div>
         <div>
             <i aria-hidden="true" class="fa fa-car-on fa-lg" title="Distance"></i>
             <span class="fa-sr-only">Distance</span>
-            <span>${prescription.distance}</span>
+            <span>${prescription.distance.toFixed(1)} mi</span>
         </div>
         <div>
             <i aria-hidden="true" class="fa fa-prescription fa-lg" title="Rx"></i>
