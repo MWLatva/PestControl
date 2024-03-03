@@ -15,22 +15,11 @@ import { ButtonModule } from 'primeng/button';
     providers: [PrescriptionService],
   })
 export class ListComponent {
-  // [values]="(locations$ | async) ?? []"
   constructor(private prescriptionService: PrescriptionService) {}
-
-  // values: Prescription[] = [
-    
-  // ];
 
   prescriptions$: Observable<Prescription[]> = this.prescriptionService.prescriptions$; 
 
-  ngOnInit() {
-    //this.prescriptionService.getPrescriptions();
-    //this.values = this.prescriptionService.getPrescriptions();
-    //{name:"Ibuprofen", price: 9.99}, {name: "asbestos", price: 0.00}
-  }
   removePrescription(name: string) {
     this.prescriptionService.removePrescription(name);
   }
-
 }

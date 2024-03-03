@@ -81,7 +81,6 @@ export class HomepageComponent implements OnInit {
 
   drugChange(event: any) {
     let drug = event.value;
-    // this.selected_drug = event.value;
     if(drug.name != "Select..."){
       this.prescriptionService.onPrescriptionsChange.next(drug);
       this.addToList();

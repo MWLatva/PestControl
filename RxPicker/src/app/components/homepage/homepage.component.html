@@ -3,7 +3,6 @@
     <p-button label="Select RX" icon="pi pi-plus" iconPos="left" (onClick)="addPrescription()"></p-button>
     <p-dropdown [options]="drop_down_options" [(ngModel)]="selected_drug" (onChange)="drugChange($event)" placeholder="Enter RX Here" [filter]="true" filterBy="name" optionLabel="name"></p-dropdown>
     <p-dropdown  appendTo="body" [options]="location_options" [(ngModel)]="selected_location" placeholder="Choose Your Location!" [filter]="true" filterBy="store_name"  optionLabel="store_name"></p-dropdown>
-    <!-- <p-button label="" icon="pi pi-check" iconPos="left" (onClick)=""></p-button> -->
 </div>
 
 <div>
