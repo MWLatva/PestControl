@@ -1,15 +1,21 @@
 import json
-from flask import Flask, jsonify, request, render_template
+import googlemaps
+from flask import Flask, jsonify, request, render_template, make_response
 # from flask_restful import Api, Resource
 from flask_restx import Api, reqparse, Resource
 from flask_swagger import swagger as Swagger
 from flask_swagger_ui import get_swaggerui_blueprint
 from geopy.distance import geodesic
+import googlemaps
 
 parser = reqparse.RequestParser()
 parser.add_argument('lat', type=float, help='Latitude of the location')
 parser.add_argument('lng', type=float, help='Longitude of the location')
 parser.add_argument('radius', type=float, help='Radius in miles')
+parser.add_argument('sort', type=str, help='Sort by distance or price', default='price')
+parser.add_argument('filter', type=str, help='Filter by distance or price')
+
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -23,7 +29,14 @@ with open('prescription.json', 'r') as file:
 @api.route('/index')
 class Index(Resource):
     def get(self):
-        return render_template('index.html')
+        headers = {'Content-Type': 'text/html'}
+        return make_response(render_template('index.html'), 200, headers)
+    
+@api.route('/homepage')
+class HomePage(Resource):
+    def get(self):
+        headers = {'Content-Type': 'text/html'}
+        return make_response(render_template('homepage.html'), 200, headers)
 
 # Find stores within a given radius from target latitude and longitude (typically client's current location).
 def find_stores_within_radius(target_lat, target_lng, radius=25):
@@ -45,15 +58,18 @@ def find_prescription_price(prescription_name):
     return []
 
 # Flask endpoint to search prescription with ZIP code
+@api.route('/prescription')
+class Prescription(Resource):
+    def get(self):
+        # Returns list of all prescription names
+        return jsonify([prescription["name"] for prescription in prescriptions["Prescriptions"]])
+
+
 @api.route('/search_prescription/<prescription>')
 class SearchPrescription(Resource):
 
     @api.expect(parser)
     def get(self, prescription):
-        # Get ZIP code from the request parameters
-        # prescription = {'name': 'Paracetamol', 'ZIP': 18015, 'Provider': 'Walgreens', 'Price': 10.00}
-        #prescription_name = request.args.get('prescription')
-
         args = parser.parse_args()
         lat = args['lat']
         lng = args['lng']
@@ -80,8 +96,25 @@ class SearchPrescription(Resource):
                         "lng": store["lng"],
                         "price": price_info["price"],
                         "distance": store["distance"],
+                        "name": prescription,
+                        "address": Address.get(Address, store["lat"], store["lng"]).json
                     })
 
         return jsonify(results)
 
+@api.route('/address/<lat>/<lng>')
+class Address(Resource):
 
+    def get(self, lat, lng):
+        gmaps = googlemaps.Client(key='AIzaSyDUaR7sxSGj1nSuwGAMLTblCrZBfofxfVU')
+        reverse_geocode_result = gmaps.reverse_geocode((lat, lng))
+
+        return jsonify(reverse_geocode_result[1]["formatted_address"])
+
+#Geocoding API 
+#python client
+# gmaps = googlemaps.Client(key='AIzaSyDUaR7sxSGj1nSuwGAMLTblCrZBfofxfVU')
+# reverse_geocode_result = gmaps.reverse_geocode((40.6012728, -73.961452))
+# print(reverse_geocode_result)
+#edit lat and long above
+#ret string with address
