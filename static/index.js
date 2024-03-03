@@ -23,8 +23,8 @@ async function initMap() {
     const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
       map,
       content: buildContent(prescription),
-      position: prescription.position,
-      title: prescription.description,
+      position: {lat: prescription.lat, lng: prescription.lng},
+      title: prescription.name,
     });
 
     AdvancedMarkerElement.addListener("click", () => {
