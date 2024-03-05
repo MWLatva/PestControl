@@ -57,9 +57,6 @@ Once you've selected a provider, such as Sam's Club, and added it to your Rx lis
 
 ![Managing Your Rx List](rx_list.png)
 
-You can mention the use of Google APIs, specifically the Google Maps API, AdvancedMarkerElements for the pins, and Google reverse geocode for converting latitude and longitude to addresses, in a new section dedicated to the technology stack and integrations. This section can be placed after the "APIs and Packages" section to maintain the flow of technical details. Here's how you could format it:
-
----
 
 ## Technology Stack and Integrations
 
