@@ -1,1 +1,7 @@
-pip install flask-restful-swagger-2
+Flask
+Flask-RESTx
+Flask-Cors
+flask_swagger
+flask-swagger-ui
+geopy
+googlemaps
