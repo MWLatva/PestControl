@@ -2,7 +2,7 @@
 
 ## Overview
 
-**PestControl - Rx-4Less** is a project showcased at LehighHacks Hack for Health 2024, the second annual hackathon hosted by Lehigh University, sponsored by Google Cloud. The hackathon theme focused on devising healthcare-based software solutions addressing pressing challenges. Our team, PestControl, identified the high cost of medication as a significant barrier affecting people regardless of gender, age, insurance quality, or socioeconomic status. To tackle this, we developed **Rx-4Less**, a tool aimed at making medications more affordable by leveraging Google APIs and a flexible tech stack.
+**PestControl - Rx-4Less** is a project showcased at Lehigh Hacks for Health 2024, the second annual hackathon hosted by Lehigh University, sponsored by Google Cloud. The hackathon theme focused on devising healthcare-based software solutions addressing pressing challenges. Our team, PestControl, identified the high cost of medication as a significant barrier affecting people regardless of gender, age, insurance quality, or socioeconomic status. To tackle this, we developed **Rx-4Less**, a tool aimed at making medications more affordable by leveraging Google APIs and a flexible tech stack.
 
 ## Motivation
 
